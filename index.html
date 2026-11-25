@@ -68,9 +68,17 @@
   --gutter:16px;
   --maxw:1320px;
   --radius-pill:32px;   /* móvil; en desktop pasa a 999px */
+
+  /* Escala tipográfica (en puntos, como en el PDF) */
+  --t-body:11pt;        /* cuerpos de texto: 10–12 pt */
+  --t-small:10pt;       /* leyendas, etiquetas, datos pequeños */
+  --t-sub:13pt;         /* subtítulos (Estudios, Idiomas…) */
+  --t-proyecto:20pt;    /* títulos de proyecto: 20–24 pt */
+  --t-portada:26pt;     /* títulos de portada de sección */
 }
 @media (min-width:768px){ :root{ --gutter:40px; } }
-@media (min-width:1024px){ :root{ --gutter:64px; --radius-pill:999px; } }
+@media (min-width:1024px){ :root{ --gutter:64px; --radius-pill:999px; --t-body:12pt; --t-proyecto:24pt; } }
+@media (min-width:768px) and (max-width:1023px){ :root{ --t-proyecto:22pt; } }
 
 /* =========================================================
    2. BASE
@@ -569,6 +577,33 @@ html{ overflow-x:clip; }
   .arcs circle{ stroke-dashoffset:0; transition:none; }
   .marquee-track{ transform:none; }
 }
+
+/* =========================================================
+   15. ESCALA TIPOGRÁFICA — cuerpos 10–12 pt · proyectos 20–24 pt · portadas 26 pt
+   (la portada principal PORTAFOLIO conserva su tamaño grande)
+   ========================================================= */
+body{ font-size:var(--t-body); }
+.pillbox p, .block p, .c-item a, .skill b, .loc .pill{ font-size:var(--t-body); }
+.pill, .caption, .h-sub, .skill b em, .skill small, .copy, .wa, .footer p,
+.sep .num, .contenido .badge, .scroll-hint{ font-size:var(--t-small); }
+.skill small{ line-height:1.35; }
+.h-sm{ font-size:var(--t-sub); }
+.card .t{ font-size:var(--t-body); }
+.card .n{ font-size:var(--t-portada); }
+/* Títulos de proyecto */
+.ttl{ font-size:var(--t-proyecto); }
+.ttl .script{ font-size:.8em; top:calc(var(--sy, 42%) + 18%); }
+.ttl.script-first .script{ font-size:.85em; --sx:-1%; --sy:-80%; top:var(--sy); }
+.ttl.script-first{ margin-top:1em; }
+.ttl{ margin-bottom:1.4em; }
+/* Portadas de sección (separadores, ¡Hola!, Contenido, Contáctame) */
+.sep .ttl, .hola, .contenido, .contactame{ font-size:var(--t-portada); }
+.sep{ min-height:clamp(240px, 42vh, 440px); padding:60px 0; }
+.hola{ margin-bottom:1em; }
+.contenido .badge{ top:-60%; right:-34%; }
+.skill b{ gap:8px; }
+.h-sub{ line-height:1.35; }
+@media (min-width:1024px){ .skills{ grid-template-columns:1fr; row-gap:16px; } }
 </style>
 </head>
 <body>
