@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paula Andrea Sandoval — Portafolio Diseño Gráfico 2026</title>
+<meta name="description" content="Portafolio de Paula Andrea Sandoval, diseñadora gráfica en Bogotá: diseño editorial, campañas visuales, branding, modelado 3D e ilustración.">
+<meta name="author" content="Paula Andrea Sandoval">
+<meta name="theme-color" content="#FDFBF4">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Paula Andrea Sandoval — Portafolio Diseño Gráfico 2026">
+<meta property="og:description" content="Diseño editorial, campañas visuales, branding, modelado 3D e ilustración. Bogotá - Colombia.">
+<meta property="og:image" content="https://paulasandoval-crypto.github.io/portafolioweb/img/og.jpg">
+<meta property="og:url" content="https://paulasandoval-crypto.github.io/portafolioweb/">
+<link rel="canonical" href="https://paulasandoval-crypto.github.io/portafolioweb/">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Portafolio Diseño Gráfico 2026 — Paula Andrea Sandoval">
+<meta name="twitter:image" content="https://paulasandoval-crypto.github.io/portafolioweb/img/og.jpg">
+<meta property="og:locale" content="es_CO">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23561A45'/%3E%3Ctext x='32' y='44' font-family='cursive' font-size='34' fill='%23F2D45C' text-anchor='middle'%3EP%3C/text%3E%3C/svg%3E">
+
+<!-- Tipografías -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Montserrat:wght@600;700;800;900&family=Unbounded:wght@700&family=Yellowtail&display=swap" rel="stylesheet">
+
+<style>
+/* =========================================================
+   1. VARIABLES — edita aquí colores y tipografías
+   ========================================================= */
+:root{
+  /* Paleta del PDF */
+  --crema:#FDFBF4;
+  --ciruela:#561A45;
+  --ciruela-suave:#7A4669;
+  --coral:#EC7466;
+  --rojo-coral:#E84C3D;
+  --oxido:#A33E1E;
+  --terracota:#B05E40;
+  --amarillo:#F2D45C;
+  --amarillo-palido:#F6EDC4;
+  --azul:#8CC2EA;
+  --azul-palido:#DCE9F2;
+  --durazno:#FBE9CF;
+  --rosa-palido:#F2E0D8;
+  --texto:#1E1A1C;
+  --gris:#6B6468;
+
+  /* Tinte de fondo que cambia por sección (lo controla JS) */
+  --tint:var(--durazno);
+
+  /* Tipografías */
+  --f-display:"Montserrat", system-ui, sans-serif;
+  --f-script:"Yellowtail", "Kaushan Script", "Dancing Script", cursive;
+  --f-body:"Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-badge:"Unbounded", "Krona One", var(--f-display);
+
+  /* Movimiento */
+  --ease:cubic-bezier(.22,1,.36,1);
+  --t-fast:400ms;
+  --t-med:700ms;
+  --t-slow:900ms;
+
+  /* Layout */
+  --gutter:16px;
+  --maxw:1320px;
+  --radius-pill:32px;   /* móvil; en desktop pasa a 999px */
+}
+@media (min-width:768px){ :root{ --gutter:40px; } }
+@media (min-width:1024px){ :root{ --gutter:64px; --radius-pill:999px; } }
+
+/* =========================================================
+   2. BASE
+   ========================================================= */
+*,*::before,*::after{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+body{
+  margin:0; background:var(--crema); color:var(--texto);
+  font-family:var(--f-body); font-size:1rem; line-height:1.6;
+  overflow-x:hidden; -webkit-font-smoothing:antialiased;
+}
+img{ max-width:100%; display:block; }
+a{ color:inherit; }
+button{ font:inherit; color:inherit; }
+:focus-visible{ outline:3px solid var(--rojo-coral); outline-offset:3px; border-radius:6px; }
+.sr-only{ position:absolute!important; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+.skip{ position:fixed; left:12px; top:-60px; z-index:200; background:var(--ciruela); color:var(--crema); padding:10px 16px; border-radius:999px; text-decoration:none; transition:top .3s var(--ease); }
+.skip:focus{ top:12px; }
+.wrap{ width:100%; max-width:var(--maxw); margin-inline:auto; padding-inline:var(--gutter); }
+section, .project{ position:relative; overflow:clip; }
+.cat{ position:relative; }
+html{ overflow-x:clip; }
+
+/* Capa de tinte que transiciona de color según la sección visible */
+.tint-layer{
+  position:fixed; inset:0; z-index:-2; pointer-events:none;
+  background:var(--tint); opacity:.28;
+  transition:background-color 1.2s var(--ease);
+}
+
+/* =========================================================
+   3. TIPOGRAFÍA DE MARCA
+   ========================================================= */
+.display{
+  font-family:var(--f-display); font-weight:900; text-transform:uppercase;
+  letter-spacing:-.02em; line-height:.92; margin:0;
+}
+.script{ font-family:var(--f-script); font-weight:400; text-transform:none; letter-spacing:0; line-height:1; }
+
+/* Título combinado: MAYÚSCULAS + script superpuesto */
+.ttl{
+  position:relative; display:inline-block; margin:0 0 .9em;
+  font-size:clamp(2.2rem, 9vw, 6.2rem);
+}
+.ttl .display{ display:block; font-size:1em; }
+.ttl .script{
+  position:absolute; white-space:nowrap;
+  font-size:.82em;
+  left:var(--sx, 28%); top:var(--sy, 42%);
+}
+.ttl.script-first .script{ --sx:-2%; --sy:-46%; font-size:.62em; }
+.ttl.script-first{ margin-top:.55em; }
+
+/* Colores utilitarios */
+.c-ciruela{ color:var(--ciruela); } .c-ciruela-suave{ color:var(--ciruela-suave); }
+.c-coral{ color:var(--coral); } .c-rojo-coral{ color:var(--rojo-coral); }
+.c-oxido{ color:var(--oxido); } .c-terracota{ color:var(--terracota); }
+.c-amarillo{ color:var(--amarillo); } .c-azul{ color:var(--azul); }
+
+/* =========================================================
+   4. COMPONENTES
+   ========================================================= */
+/* Caja píldora */
+.pillbox{
+  position:relative; border-radius:var(--radius-pill);
+  padding:clamp(22px,3vw,40px) clamp(22px,4.5vw,64px);
+  background:var(--amarillo-palido); margin:0 0 1.4rem;
+}
+.pillbox p{ margin:0; }
+.pillbox p + p{ margin-top:.8em; }
+.pillbox.azul{ background:var(--azul-palido); }
+@media (min-width:1024px){
+  .pillbox.bleed-r{ margin-right:calc(-1 * var(--gutter) - 40px); padding-right:calc(var(--gutter) + 64px); }
+  .pillbox.bleed-l{ margin-left:calc(-1 * var(--gutter) - 40px); padding-left:calc(var(--gutter) + 64px); }
+}
+
+/* Pills de etiquetas */
+.pills{ display:flex; flex-wrap:wrap; gap:10px; padding:0; margin:0; list-style:none; }
+.pill{
+  display:inline-flex; align-items:center; gap:.4em;
+  font-family:var(--f-body); font-weight:600; font-size:.95rem; line-height:1;
+  padding:.62em 1.15em; border-radius:999px;
+  background:var(--oxido); color:var(--crema); border:2px solid var(--oxido);
+}
+.pill.outline{ background:var(--crema); color:var(--oxido); }
+.pill.blue{ background:var(--azul); border-color:var(--azul); color:var(--ciruela); }
+.pill.yellow{ background:var(--amarillo-palido); border-color:var(--amarillo-palido); color:var(--oxido); }
+
+/* Badge inclinado */
+.badge{
+  display:inline-block; font-family:var(--f-badge); font-weight:700;
+  padding:.28em .7em .34em; border-radius:999px; line-height:1;
+  transform:rotate(14deg); white-space:nowrap;
+}
+.badge.blue{ background:var(--azul); color:var(--crema); }
+.badge.yellow{ background:var(--amarillo); color:var(--oxido); }
+
+/* Íconos de software */
+.sw{ display:inline-grid; place-items:center; width:42px; height:42px; border-radius:9px;
+  font-family:var(--f-body); font-weight:700; font-size:1.05rem; flex:none; }
+.sw-ai{ background:#330000; color:#FF9A00; }
+.sw-ps,.sw-lr{ background:#001E36; color:#31A8FF; }
+.sw-id{ background:#49021F; color:#FF3366; }
+.sw-c4d{ background:#0b1a3a; color:#fff; border-radius:50%; font-size:.72rem; }
+.sw-fig{ background:#1e1e1e; }
+.sw-fig svg{ width:22px; height:22px; }
+
+.caption{ font-family:var(--f-body); font-weight:300; font-style:italic; color:var(--gris); font-size:.95rem; }
+.software-line{ display:flex; align-items:center; flex-wrap:wrap; gap:10px; margin:0 0 1.4rem; }
+
+/* Arco tipo ventana (rectángulo con tope semicircular) */
+.arch{ border-radius:999px 999px 0 0; }
+
+/* Sunburst (rayos de sol) — generado en SVG por JS */
+.sun{ position:absolute; inset:-30% -10%; z-index:-1; pointer-events:none; }
+.sun svg{ width:100%; height:100%; display:block; }
+.sun .rays{ animation:spin 120s linear infinite; transform-box:view-box; }
+@keyframes spin{ to{ transform:rotate(360deg); } }
+
+/* Arcos concéntricos — dibujados con stroke-dashoffset */
+.arcs{ position:absolute; z-index:-1; pointer-events:none; }
+.arcs circle{ fill:none; stroke-dasharray:1; stroke-dashoffset:1; transition:stroke-dashoffset 1.8s var(--ease); }
+.arcs.in circle{ stroke-dashoffset:0; }
+.arcs.in circle:nth-child(2){ transition-delay:.15s; } .arcs.in circle:nth-child(3){ transition-delay:.3s; }
+.arcs.in circle:nth-child(4){ transition-delay:.45s; } .arcs.in circle:nth-child(5){ transition-delay:.6s; }
+.arcs.in circle:nth-child(6){ transition-delay:.75s; }
+
+/* =========================================================
+   5. REVEAL ON SCROLL
+   ========================================================= */
+.rv{ opacity:0; transform:translateY(28px); transition:opacity var(--t-med) var(--ease), transform var(--t-slow) var(--ease); }
+.rv.in{ opacity:1; transform:none; }
+.ttl.rv .script{ opacity:0; transform:translate(-18px,14px); transition:opacity var(--t-med) var(--ease) .15s, transform var(--t-slow) var(--ease) .15s; }
+.ttl.rv.in .script{ opacity:1; transform:none; }
+.pillbox.rv{ transform:none; clip-path:inset(0 100% 0 0 round var(--radius-pill)); transition:clip-path 1s var(--ease), opacity .5s var(--ease); }
+.pillbox.rv.from-r{ clip-path:inset(0 0 0 100% round var(--radius-pill)); }
+.pillbox.rv.in{ clip-path:inset(0 0 0 0 round var(--radius-pill)); }
+.stagger > *{ opacity:0; transform:translateY(12px) scale(.96); transition:opacity var(--t-fast) var(--ease), transform var(--t-med) var(--ease); transition-delay:calc(var(--i,0) * 60ms); }
+.stagger.in > *{ opacity:1; transform:none; }
+
+/* =========================================================
+   6. UI GLOBAL: progreso, nav, cursor, marquesina
+   ========================================================= */
+.progress{ position:fixed; top:0; left:0; height:3px; width:100%; background:var(--coral); transform-origin:0 50%; transform:scaleX(0); z-index:120; }
+
+.nav{
+  position:fixed; inset:0 0 auto 0; z-index:100;
+  background:color-mix(in srgb, var(--crema) 78%, transparent);
+  -webkit-backdrop-filter:blur(12px); backdrop-filter:blur(12px);
+  transition:transform .5s var(--ease), box-shadow .3s;
+}
+.nav.hide{ transform:translateY(-100%); }
+.nav .wrap{ display:flex; align-items:center; justify-content:space-between; height:64px; }
+.logo{ font-family:var(--f-script); font-size:1.9rem; color:var(--ciruela); text-decoration:none; line-height:1; padding-top:4px; }
+.nav-links{ display:none; gap:34px; list-style:none; margin:0; padding:0; }
+.nav-links a{ text-decoration:none; font-weight:600; color:var(--ciruela); position:relative; padding:4px 0; }
+.nav-links a::after{ content:""; position:absolute; left:0; right:0; bottom:-2px; height:2px; background:var(--coral); transform:scaleX(0); transform-origin:right; transition:transform .4s var(--ease); }
+.nav-links a:hover::after,.nav-links a:focus-visible::after{ transform:scaleX(1); transform-origin:left; }
+.burger{ width:46px; height:46px; border:0; background:none; display:grid; place-items:center; cursor:pointer; position:relative; z-index:2; }
+.burger span{ display:block; width:24px; height:2px; background:var(--ciruela); position:relative; transition:transform .4s var(--ease), background .2s; }
+.burger span::before,.burger span::after{ content:""; position:absolute; left:0; width:24px; height:2px; background:var(--ciruela); transition:transform .4s var(--ease); }
+.burger span::before{ top:-7px; } .burger span::after{ top:7px; }
+.menu-open .burger span{ background:transparent; }
+.menu-open .burger span::before{ transform:translateY(7px) rotate(45deg); }
+.menu-open .burger span::after{ transform:translateY(-7px) rotate(-45deg); }
+.mobile-panel{
+  position:fixed; inset:0; z-index:90; background:var(--crema);
+  display:flex; flex-direction:column; justify-content:center; padding:var(--gutter);
+  clip-path:circle(0 at calc(100% - 38px) 32px); transition:clip-path .7s var(--ease); visibility:hidden;
+}
+.menu-open .mobile-panel{ clip-path:circle(150% at calc(100% - 38px) 32px); visibility:visible; }
+.mobile-panel ul{ list-style:none; margin:0; padding:0; }
+.mobile-panel a{ display:block; font-family:var(--f-display); font-weight:900; text-transform:uppercase; font-size:clamp(2.4rem,12vw,4rem); color:var(--ciruela); text-decoration:none; line-height:1.15; letter-spacing:-.02em; }
+.mobile-panel a:hover{ color:var(--coral); }
+.mobile-panel .script{ color:var(--rojo-coral); font-size:2rem; margin-top:28px; }
+@media (min-width:768px){ .nav-links{ display:flex; } .burger,.mobile-panel{ display:none; } }
+
+/* Cursor personalizado */
+.cursor{
+  position:fixed; left:0; top:0; z-index:500; pointer-events:none;
+  width:14px; height:14px; margin:-7px 0 0 -7px; border-radius:50%;
+  background:var(--coral); display:grid; place-items:center;
+  color:var(--crema); font:600 .82rem var(--f-body);
+  transition:width .35s var(--ease), height .35s var(--ease), margin .35s var(--ease), opacity .3s;
+  opacity:0;
+}
+.cursor span{ opacity:0; transition:opacity .2s; }
+.cursor.view{ width:74px; height:74px; margin:-37px 0 0 -37px; }
+.cursor.view span{ opacity:1; }
+.cursor.link{ width:34px; height:34px; margin:-17px 0 0 -17px; background:color-mix(in srgb, var(--coral) 45%, transparent); }
+.has-cursor, .has-cursor a, .has-cursor button{ cursor:none; }
+
+/* Marquesina */
+.marquee{ overflow:hidden; border-block:2px solid var(--coral); background:var(--crema); padding:14px 0; }
+.marquee-track{ display:flex; width:max-content; animation:marquee 42s linear infinite; }
+.marquee span{ font-family:var(--f-display); font-weight:800; text-transform:uppercase; letter-spacing:-.01em; font-size:clamp(1.2rem,3vw,2rem); color:var(--ciruela); white-space:nowrap; padding-right:.6em; }
+.marquee i{ font-style:normal; color:var(--rojo-coral); padding:0 .6em; }
+@keyframes marquee{ to{ transform:translateX(-50%); } }
+
+/* =========================================================
+   7. HERO
+   ========================================================= */
+.hero{ min-height:100svh; display:flex; align-items:center; padding:110px 0 120px; isolation:isolate; }
+.hero .sun-par{ position:absolute; inset:0; z-index:-1; }
+.hero .sun{ opacity:0; transform:scale(.82) rotate(-14deg); transition:opacity 1.2s var(--ease), transform 1.8s var(--ease); }
+.loaded .hero .sun{ opacity:1; transform:none; }
+.hero-title{ position:relative; display:inline-block; }
+.hero-title .write{
+  display:block; color:var(--rojo-coral); font-size:clamp(2.4rem, 8vw, 6.4rem);
+  margin:0 0 -.22em .02em; position:relative; z-index:2; padding:0 .1em .1em 0;
+  clip-path:inset(-30% 100% -30% 0); transition:clip-path 1.4s cubic-bezier(.6,.05,.3,1) .75s;
+}
+.loaded .hero-title .write{ clip-path:inset(-30% -10% -30% 0); }
+.hero-title h1{ font-size:clamp(2.6rem, 12.4vw, 11.5rem); color:var(--ciruela); display:flex; }
+.hero-title h1 .ch{ display:inline-block; overflow:hidden; padding-top:.06em; margin-top:-.06em; }
+.hero-title h1 .ch > span{ display:inline-block; transform:translateY(105%); transition:transform 1s var(--ease); transition-delay:calc(var(--i) * 55ms + 150ms); }
+.loaded .hero-title h1 .ch > span{ transform:none; }
+.hero .badge{ position:absolute; right:-3%; top:18%; font-size:clamp(1rem, 3.2vw, 2.9rem); opacity:0; z-index:3; }
+.loaded .hero .badge{ animation:drop 1.1s var(--ease) 1.1s forwards; }
+@keyframes drop{
+  0%{ opacity:0; transform:translateY(-140px) rotate(-25deg); }
+  55%{ opacity:1; transform:translateY(10px) rotate(18deg); }
+  75%{ transform:translateY(-6px) rotate(11deg); }
+  100%{ opacity:1; transform:translateY(0) rotate(14deg); }
+}
+.name-pill{ display:inline-block; margin-top:clamp(18px,3vw,36px); border:3px solid var(--oxido); color:var(--oxido); border-radius:999px; padding:.3em 1em; font-weight:600; font-size:clamp(1.1rem,2.6vw,2rem); letter-spacing:-.02em;
+  opacity:0; transform:translateY(16px); transition:opacity .8s var(--ease) 1.3s, transform .8s var(--ease) 1.3s; }
+.loaded .name-pill{ opacity:1; transform:none; }
+.hero-mail{ position:absolute; right:var(--gutter); bottom:34px; display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--ciruela); font-style:italic; font-size:clamp(.95rem,2vw,1.5rem); font-weight:400;
+  opacity:0; transition:opacity .8s var(--ease) 1.6s; }
+.loaded .hero-mail{ opacity:1; }
+.hero-mail .ic{ width:48px; height:48px; border-radius:50%; background:var(--amarillo); display:grid; place-items:center; flex:none; transition:transform .4s var(--ease); }
+.hero-mail:hover .ic{ transform:rotate(-12deg) scale(1.08); }
+.hero-mail .ic svg{ width:24px; }
+.scroll-hint{ position:absolute; left:50%; bottom:28px; translate:-50% 0; display:flex; flex-direction:column; align-items:center; gap:6px; color:var(--ciruela-suave); font-size:.75rem; letter-spacing:.2em; text-transform:uppercase; text-decoration:none; }
+.scroll-hint .mouse{ width:24px; height:38px; border:2px solid currentColor; border-radius:14px; position:relative; }
+.scroll-hint .mouse::after{ content:""; position:absolute; left:50%; top:7px; width:4px; height:8px; margin-left:-2px; border-radius:2px; background:var(--rojo-coral); animation:wheel 1.8s var(--ease) infinite; }
+@keyframes wheel{ 0%{ opacity:0; transform:translateY(-3px);} 30%{opacity:1;} 100%{ opacity:0; transform:translateY(12px);} }
+@media (max-width:767px){
+  .hero-mail{ left:var(--gutter); right:auto; bottom:90px; }
+  .scroll-hint{ bottom:22px; }
+  .hero{ align-items:flex-start; padding-top:22vh; }
+}
+
+/* =========================================================
+   8. SOBRE MÍ
+   ========================================================= */
+.about{ padding:clamp(80px,10vw,140px) 0; }
+.about-grid{ display:grid; gap:48px; }
+@media (min-width:1024px){ .about-grid{ grid-template-columns:5fr 7fr; gap:56px; align-items:start; } }
+
+.sticker{ position:relative; width:100%; max-width:460px; margin-inline:auto; padding-top:40px; }
+.sticker .stripes{
+  position:absolute; left:8%; right:8%; top:0; bottom:60px; z-index:-1;
+  background:repeating-linear-gradient(90deg, var(--amarillo-palido) 0 26px, transparent 26px 52px);
+}
+.sticker .shot{ filter:drop-shadow(0 0 0 #fff) drop-shadow(6px 0 0 #fff) drop-shadow(-6px 0 0 #fff) drop-shadow(0 6px 0 #fff) drop-shadow(0 -6px 0 #fff); }
+/* Foto real cargada: la composición ya trae sus anillos, así que se quitan las rayas y el contorno */
+.sticker:has(.shot:not(.is-ph)) .stripes{ display:none; }
+.sticker .shot:not(.is-ph){ filter:none; overflow:visible; border-radius:0;
+  -webkit-mask-image:linear-gradient(90deg, transparent 0, #000 4%, #000 96%, transparent 100%);
+          mask-image:linear-gradient(90deg, transparent 0, #000 4%, #000 96%, transparent 100%); }
+.sticker .shot:not(.is-ph) img{ transition:transform 1.2s var(--ease); }
+.sticker:hover .shot:not(.is-ph) img{ transform:rotate(-1.5deg) scale(1.02); }
+/* Recorte sin fondo (Contacto): contorno blanco tipo sticker, como en el PDF */
+.sticker .shot.cutout:not(.is-ph){ -webkit-mask-image:none; mask-image:none;
+  filter:drop-shadow(7px 0 0 #fff) drop-shadow(-7px 0 0 #fff) drop-shadow(0 7px 0 #fff) drop-shadow(0 -7px 0 #fff) drop-shadow(0 18px 24px rgba(86,26,69,.12)); }
+.sticker .shot.is-ph{ aspect-ratio:4/5; border-radius:999px 999px 24px 24px; }
+.loc{ display:flex; justify-content:center; margin-top:18px; }
+.loc .pill{ font-size:1.1rem; color:var(--texto); border-color:var(--rojo-coral); }
+.loc svg{ width:18px; height:18px; fill:var(--rojo-coral); }
+
+.hola{ font-size:clamp(3rem, 13vw, 7.5rem); margin-bottom:.55em; }
+.hola .display{ color:var(--coral); }
+.hola .script{ --sx:52%; --sy:30%; color:var(--ciruela); font-size:.78em; }
+
+.cols{ display:grid; gap:40px; margin-top:36px; }
+@media (min-width:768px){ .cols{ grid-template-columns:1fr 1fr; gap:0; } .cols > :first-child{ padding-right:40px; border-right:3px solid var(--rojo-coral); } .cols > :last-child{ padding-left:40px; } }
+.h-sm{ font-family:var(--f-display); font-weight:800; text-transform:uppercase; color:var(--ciruela); font-size:1.4rem; letter-spacing:-.01em; margin:0 0 .25em; line-height:1.1; }
+.h-sub{ font-weight:600; color:var(--oxido); text-transform:uppercase; margin:0 0 .3em; font-size:.98rem; }
+.block{ margin-bottom:28px; } .block p{ margin:0; font-size:.95rem; }
+
+.skills{ display:grid; gap:20px; margin-top:16px; }
+@media (min-width:480px){ .skills{ grid-template-columns:1fr 1fr; column-gap:28px; } }
+@media (min-width:768px) and (max-width:1023px){ .skills{ grid-template-columns:1fr; } }
+.skill{ display:grid; grid-template-columns:42px 1fr; gap:12px; align-items:center; }
+.skill b{ display:flex; justify-content:space-between; color:var(--rojo-coral); font-weight:600; font-size:1.05rem; line-height:1.2; }
+.skill b em{ font-style:normal; font-size:.85rem; color:var(--oxido); font-variant-numeric:tabular-nums; }
+.skill small{ display:block; font-size:.72rem; color:var(--gris); margin:2px 0 6px; line-height:1.3; }
+.bar{ height:7px; background:var(--amarillo-palido); border-radius:4px; overflow:hidden; }
+.bar i{ display:block; height:100%; width:100%; background:var(--rojo-coral); border-radius:4px; transform:scaleX(0); transform-origin:0 50%; transition:transform 1.4s var(--ease); }
+.skills.in .bar i{ transform:scaleX(var(--v)); }
+.areas{ margin-top:40px; }
+.areas .h-sm{ margin-bottom:14px; }
+
+/* =========================================================
+   9. ÍNDICE — CONTENIDO
+   ========================================================= */
+.index{ padding:clamp(90px,12vw,160px) 0 clamp(80px,10vw,140px); isolation:isolate; }
+.index .arcs{ left:50%; top:62%; width:max(1500px,120vw); translate:-50% -50%; aspect-ratio:1; }
+.contenido{ font-size:clamp(2.8rem, 13vw, 11rem); position:relative; display:inline-block; }
+.contenido .display{ color:var(--ciruela); }
+.contenido .badge{ position:absolute; right:-6%; top:-26%; font-size:clamp(.85rem, 2.6vw, 2.2rem); }
+.filters{ display:flex; flex-wrap:wrap; gap:10px; margin:clamp(24px,4vw,48px) 0 clamp(28px,4vw,48px); }
+.filters button{ cursor:pointer; background:var(--crema); transition:background .35s var(--ease), color .35s var(--ease), transform .35s var(--ease); }
+.filters button:hover{ transform:translateY(-2px); }
+.filters button[aria-pressed="true"]{ background:var(--oxido); color:var(--crema); }
+.cards{ display:grid; grid-template-columns:repeat(2,1fr); gap:18px; list-style:none; padding:0; margin:0; }
+@media (min-width:768px){ .cards{ grid-template-columns:repeat(5,1fr); gap:clamp(14px,2.4vw,36px); } }
+.cards li:last-child:nth-child(odd){ grid-column:1 / -1; justify-self:center; width:calc(50% - 9px); }
+@media (min-width:768px){ .cards li:last-child:nth-child(odd){ grid-column:auto; width:auto; } }
+.card{
+  position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;
+  aspect-ratio:3/4.6; border:clamp(4px,.5vw,7px) solid var(--coral); border-radius:999px 999px 0 0;
+  text-decoration:none; overflow:hidden; isolation:isolate; background:color-mix(in srgb, var(--crema) 70%, transparent);
+  transition:opacity .5s var(--ease), filter .5s var(--ease), transform .5s var(--ease);
+  padding:0 8px;
+}
+.card::before{ content:""; position:absolute; inset:0; background:var(--coral); z-index:-1; transform:scaleY(0); transform-origin:50% 100%; transition:transform .7s var(--ease); }
+.card:hover::before,.card:focus-visible::before{ transform:scaleY(1); }
+.card .n{ font-family:var(--f-display); font-weight:800; font-size:clamp(2.2rem,4.6vw,4.2rem); color:var(--rojo-coral); line-height:1; transition:color .5s var(--ease), transform .5s var(--ease); }
+.card .t{ font-family:var(--f-display); font-weight:700; font-size:clamp(.95rem,1.6vw,1.45rem); color:var(--ciruela); line-height:1.12; margin-top:.5em; transition:color .5s var(--ease); }
+.card:hover .n,.card:focus-visible .n{ color:var(--crema); transform:translateY(-8px); }
+.card:hover .t,.card:focus-visible .t{ color:var(--ciruela); }
+.is-dim{ opacity:.25; filter:grayscale(.8); }
+.card.is-match{ transform:translateY(-6px); }
+
+/* =========================================================
+   10. SEPARADORES DE CATEGORÍA
+   ========================================================= */
+.sep{ min-height:clamp(420px, 80vh, 820px); display:grid; place-items:center; isolation:isolate; text-align:center; padding:80px 0; transition:opacity .6s var(--ease), filter .6s var(--ease); }
+.sep .ttl{ font-size:clamp(2.2rem, 10.5vw, 10rem); margin:0; text-align:left; }
+.sep .ttl .script{ --sx:36%; --sy:52%; font-size:.78em; }
+.sep .num{ display:block; font-family:var(--f-display); font-weight:800; color:var(--rojo-coral); font-size:clamp(1rem,2vw,1.4rem); letter-spacing:.1em; margin-bottom:.8em; text-align:center; }
+
+/* =========================================================
+   11. PROYECTOS
+   ========================================================= */
+.cat{ transition:opacity .6s var(--ease), filter .6s var(--ease); }
+.project{ position:relative; padding:clamp(70px,9vw,130px) 0; isolation:isolate; }
+.project .arcs{ top:6%; width:min(1100px,150vw); aspect-ratio:1; }
+.project .arcs.left{ left:0; translate:-50% 0; } .project .arcs.right{ right:0; translate:50% 0; }
+.p-top{ display:grid; gap:28px; grid-template-areas:"title" "media" "desc" "meta"; align-items:center; }
+.p-top > .ttl{ grid-area:title; justify-self:start; }
+.p-top > .p-desc{ grid-area:desc; }
+.p-top > .p-meta{ grid-area:meta; }
+.p-top > .p-media{ grid-area:media; }
+@media (min-width:1024px){
+  .p-top{ grid-template-columns:6fr 6fr; column-gap:64px; row-gap:0; grid-template-areas:"title media" "desc media" "meta media"; align-content:center; }
+  .project.rev .p-top{ grid-template-areas:"media title" "media desc" "media meta"; }
+  .p-top > .ttl{ align-self:end; }
+}
+.p-media{ position:relative; display:grid; place-items:center; padding:clamp(20px,4vw,48px) 0; }
+.p-media .win{ position:absolute; left:10%; right:10%; top:0; bottom:-8%; background:var(--pale); z-index:-1; }
+.p-media .tilt{ width:100%; max-width:640px; transform-style:preserve-3d; transition:transform .6s var(--ease); will-change:transform; }
+/* Logos como imagen principal: más pequeños y centrados dentro del arco */
+.p-media.is-logo{ min-height:clamp(300px, 36vw, 520px); }
+.p-media.is-logo .win{ bottom:0; }
+.p-media.is-logo .tilt{ max-width:min(68%, 400px); }
+.p-media.is-logo .shot:not(.is-ph){ overflow:visible; }
+/* Ilustración rectangular recortada en forma de arco-ventana */
+.p-media.is-arch .tilt{ max-width:min(78%, 430px); }
+.p-media.is-arch .shot{ border-radius:999px 999px 18px 18px; box-shadow:0 24px 50px -28px rgba(86,26,69,.45); }.p-media .shot.is-ph{ aspect-ratio:4/5; width:min(100%,440px); margin-inline:auto; border-radius:999px 999px 18px 18px; background:color-mix(in srgb, var(--pale) 82%, var(--ciruela)); }
+
+.p-bottom{ display:grid; gap:32px; margin-top:clamp(40px,6vw,80px); grid-template-areas:"txt" "gal"; }
+.p-bottom .p-txt{ grid-area:txt; } .p-bottom .gallery{ grid-area:gal; }
+@media (min-width:1024px){
+  .p-bottom{ grid-template-columns:5fr 7fr; column-gap:64px; grid-template-areas:"txt gal"; align-items:start; }
+  .project.rev .p-bottom{ grid-template-columns:7fr 5fr; grid-template-areas:"gal txt"; }
+  .p-bottom .p-txt{ position:sticky; top:100px; }
+}
+.gallery{ columns:2 200px; column-gap:16px; }
+.gallery .shot{ break-inside:avoid; margin:0 0 16px; }
+.gallery.many{ columns:3 160px; }
+/* Galería "ancha": imágenes horizontales (p. ej. revistas abiertas), una por fila y escalonadas */
+/* Galería "destacada": la primera imagen a todo el ancho y las demás en pares debajo */
+.gallery.destacada{ columns:auto; display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.gallery.destacada .shot{ margin:0; }
+.gallery.destacada .shot:first-child, .gallery.destacada .shot:last-child:nth-child(even){ grid-column:1 / -1; }
+.gallery.destacada .shot img{ height:100%; object-fit:contain; }
+/* Banner panorámico (p. ej. carrusel de Instagram) */
+.banner{ margin-top:clamp(40px,6vw,80px); text-align:center; }
+.banner .shot{ border-radius:0; }
+.banner .caption{ margin:.6em 0 0; }
+@media (max-width:767px){
+  .banner .scroller{ overflow-x:auto; scroll-snap-type:x proximity; -webkit-overflow-scrolling:touch; scrollbar-width:thin; }
+  .banner .shot{ width:820px; max-width:none; }
+  .banner .caption::after{ content:" · desliza →"; }
+}
+/* Galería "proceso": pasos en fila con leyenda debajo */
+.gallery.proceso{ columns:auto; display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.gallery.proceso .paso{ margin:0; }
+.gallery.proceso .shot{ margin:0; background:#fff; border:2px solid var(--amarillo-palido); }
+.gallery.proceso .paso:nth-child(2){ transition-delay:.12s; } .gallery.proceso .paso:nth-child(3){ transition-delay:.24s; }
+.gallery.proceso .caption{ margin:.6em 0 0; text-align:center; }
+@media (max-width:479px){ .gallery.proceso{ grid-template-columns:1fr 1fr; } .gallery.proceso .paso:last-child{ grid-column:1 / -1; width:calc(50% - 10px); justify-self:center; } }
+/* Proyecto sin segundo texto: la galería ocupa todo el ancho */
+.p-bottom.solo{ grid-template-columns:1fr !important; grid-template-areas:"gal" !important; }
+.p-bottom.solo .p-txt{ display:none; }
+.p-bottom.solo .gallery.destacada{ grid-template-columns:repeat(3,1fr); }
+.p-bottom.solo .gallery.destacada .shot:first-child{ grid-column:auto; }
+@media (max-width:767px){ .p-bottom.solo .gallery.destacada{ grid-template-columns:1fr; } }
+.gallery.ancha{ columns:1; }
+.gallery.ancha .shot{ border-radius:0; margin-bottom:-2%; }
+@media (min-width:768px){
+  .gallery.ancha .shot:nth-child(odd){ margin-right:10%; }
+  .gallery.ancha .shot:nth-child(even){ margin-left:10%; }
+}
+
+/* Figuras / imágenes con placeholder */
+.shot{ position:relative; margin:0; border-radius:14px; overflow:hidden; cursor:zoom-in; }
+.shot img{ width:100%; height:auto; object-fit:cover; transition:transform .9s var(--ease); }
+.gallery .shot:hover img{ transform:scale(1.04); }
+.shot.no-zoom{ cursor:default; }
+.shot.is-ph{ background:var(--pale, var(--azul-palido)); aspect-ratio:4/3; display:grid; place-items:center; }
+.shot.is-ph img{ display:none; }
+.shot.is-ph::after{ content:attr(data-name); font:600 .85rem/1.3 var(--f-body); color:var(--ciruela); padding:12px 16px; text-align:center; word-break:break-all; background:color-mix(in srgb, var(--crema) 70%, transparent); border-radius:999px; margin:12px; }
+.gallery .shot.is-ph:nth-child(3n+2){ aspect-ratio:3/4; }
+.gallery .shot.is-ph:nth-child(4n+3){ aspect-ratio:1; }
+.shot figcaption{ position:absolute; inset:auto 10px 10px auto; }
+
+/* Mockup de celular (feed de Instagram) */
+.phone-wrap{ margin-top:28px; }
+.phone{ position:relative; width:min(290px, 80vw); aspect-ratio:9/19; margin:12px auto 0; border-radius:42px; background:#1E1A1C; padding:12px; box-shadow:0 30px 60px -30px rgba(86,26,69,.45); }
+.phone::before{ content:""; position:absolute; top:20px; left:50%; width:84px; height:22px; margin-left:-42px; background:#1E1A1C; border-radius:12px; z-index:2; }
+.phone .screen{ height:100%; border-radius:32px; overflow:hidden; background:var(--crema); display:flex; flex-direction:column; }
+.phone .ig-head{ padding:44px 14px 10px; display:flex; align-items:center; gap:8px; font:600 .8rem var(--f-body); border-bottom:1px solid var(--amarillo-palido); }
+.phone .ig-head i{ width:28px; height:28px; border-radius:50%; background:linear-gradient(45deg,var(--amarillo),var(--rojo-coral),var(--ciruela)); }
+.phone .feed{ display:flex; overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:none; flex:1; align-items:center; }
+.phone .feed::-webkit-scrollbar{ display:none; }
+.phone .feed .shot{ flex:0 0 100%; scroll-snap-align:center; border-radius:0; }
+.phone .feed .shot.is-ph{ aspect-ratio:4/5; }
+.phone .dots{ display:flex; justify-content:center; gap:5px; padding:10px 0 16px; }
+.phone .dots b{ width:6px; height:6px; border-radius:50%; background:var(--azul-palido); transition:background .3s; }
+.phone .dots b.on{ background:var(--azul); }
+
+/* =========================================================
+   12. CONTACTO + FOOTER
+   ========================================================= */
+.contact{ padding:clamp(90px,11vw,150px) 0; isolation:isolate; }
+.contact-grid{ display:grid; gap:40px; align-items:center; }
+@media (min-width:1024px){ .contact-grid{ grid-template-columns:5fr 7fr; gap:56px; } }
+.contact .sticker .stripes{ display:none; }
+.contactame{ font-size:clamp(2.2rem, 10vw, 6.4rem); color:var(--ciruela-suave); margin:0 0 .4em; }
+.c-list{ list-style:none; margin:0; padding:0; display:grid; gap:14px; }
+@media (min-width:768px){ .c-list{ display:flex; flex-wrap:wrap; gap:14px 30px; } .c-item{ flex-wrap:nowrap; } }
+.c-item{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+.sticker .shot{ width:100%; }
+.c-item svg{ width:26px; height:26px; flex:none; fill:none; stroke:var(--rojo-coral); stroke-width:2; }
+.c-item a{ text-decoration:none; font-size:1.02rem; overflow-wrap:anywhere; }
+.c-item a:hover{ color:var(--oxido); text-decoration:underline; text-underline-offset:3px; }
+.copy{ border:0; background:color-mix(in srgb, var(--crema) 80%, transparent); color:var(--oxido); font-size:.75rem; font-weight:600; padding:4px 10px; border-radius:999px; cursor:pointer; transition:background .3s; }
+.copy:hover{ background:var(--crema); }
+.wa{ font-size:.78rem; color:var(--oxido); font-weight:600; }
+.btn{ display:inline-flex; align-items:center; gap:10px; text-decoration:none; background:var(--oxido); color:var(--crema); font-weight:600; padding:16px 28px; border-radius:999px; transition:transform .4s var(--ease), background .3s; }
+.btn:hover{ transform:translateY(-3px); background:var(--ciruela); }
+.btn svg{ width:20px; height:20px; stroke:currentColor; fill:none; stroke-width:2; }
+.toast{ position:fixed; left:50%; bottom:28px; z-index:250; translate:-50% 0; background:var(--ciruela); color:var(--crema); padding:10px 22px; border-radius:999px; font-weight:600; opacity:0; transform:translateY(16px); transition:opacity .35s var(--ease), transform .45s var(--ease); pointer-events:none; }
+.toast.show{ opacity:1; transform:none; }
+
+.footer{ padding:44px 0 36px; border-top:2px solid var(--amarillo-palido); }
+.footer .wrap{ display:flex; flex-wrap:wrap; gap:12px 28px; align-items:center; justify-content:space-between; }
+.footer .script{ font-size:2.2rem; color:var(--ciruela); }
+.footer p{ margin:0; color:var(--gris); font-size:.92rem; }
+.footer .heart{ color:var(--rojo-coral); }
+
+/* =========================================================
+   13. LIGHTBOX
+   ========================================================= */
+.lb{ position:fixed; inset:0; z-index:400; background:color-mix(in srgb, var(--crema) 92%, transparent); -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px);
+  display:grid; place-items:center; opacity:0; visibility:hidden; transition:opacity .45s var(--ease), visibility .45s; }
+.lb.open{ opacity:1; visibility:visible; }
+.lb-stage{ width:min(92vw,1200px); height:min(80vh,900px); display:grid; place-items:center; }
+.lb-stage img{ max-width:100%; max-height:100%; object-fit:contain; border-radius:12px; transform:scale(.96); opacity:0; transition:transform .6s var(--ease), opacity .4s var(--ease); }
+.lb-stage img.ready{ transform:none; opacity:1; }
+.lb-stage .shot{ width:min(80vw,640px); cursor:default; }
+.lb button{ position:absolute; border:0; background:var(--ciruela); color:var(--crema); width:52px; height:52px; border-radius:50%; cursor:pointer; display:grid; place-items:center; transition:transform .35s var(--ease), background .3s; }
+.lb button:hover{ background:var(--rojo-coral); transform:scale(1.07); }
+.lb button svg{ width:22px; height:22px; stroke:currentColor; fill:none; stroke-width:2.4; }
+.lb-close{ top:18px; right:18px; } .lb-prev{ left:18px; top:50%; translate:0 -50%; } .lb-next{ right:18px; top:50%; translate:0 -50%; }
+.lb-count{ position:absolute; bottom:22px; left:50%; translate:-50% 0; font-weight:600; color:var(--ciruela); font-variant-numeric:tabular-nums; }
+@media (max-width:767px){ .lb-prev,.lb-next{ top:auto; bottom:12px; translate:none; } .lb-prev{ left:20px; } .lb-next{ right:20px; } }
+
+/* =========================================================
+   14. MOVIMIENTO REDUCIDO — solo fades
+   ========================================================= */
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  *,*::before,*::after{ animation:none!important; }
+  .rv,.ttl.rv .script,.stagger > *{ transform:none!important; }
+  .pillbox.rv{ clip-path:none!important; }
+  .hero .sun,.hero-title h1 .ch > span,.name-pill{ transform:none!important; }
+  .hero-title .write{ clip-path:none!important; }
+  .loaded .hero .badge{ opacity:1; transform:rotate(14deg); }
+  .bar i{ transition-duration:.01s; }
+  .arcs circle{ stroke-dashoffset:0; transition:none; }
+  .marquee-track{ transform:none; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+<div class="tint-layer" aria-hidden="true"></div>
+<div class="progress" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"><span>Ver</span></div>
+
+<!-- =====================================================
+     0. NAVEGACIÓN
+     ===================================================== -->
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="Paula Andrea Sandoval — inicio">Paula Sandoval</a>
+    <nav aria-label="Principal">
+      <ul class="nav-links">
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <button class="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-panel"><span></span></button>
+  </div>
+</header>
+<div class="mobile-panel" id="mobile-panel" aria-hidden="true">
+  <nav aria-label="Menú móvil">
+    <ul>
+      <li><a href="#sobre-mi">Sobre mí</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+  <p class="script">Diseño Gráfico · 2026</p>
+</div>
+
+<main id="main">
+
+<!-- =====================================================
+     1. HERO / PORTADA
+     ===================================================== -->
+<section class="hero" id="inicio" data-tint="#FBE9CF" aria-label="Portada">
+  <div class="sun-par" data-parallax="0.15"><div class="sun" data-sun="#FBE9CF" data-cx="0.47" data-cy="0.48" data-seed="3"></div></div>
+  <div class="wrap">
+    <div class="hero-title">
+      <span class="script write" aria-hidden="true">Diseño Gráfico</span>
+      <h1 class="display" aria-label="Portafolio de Diseño Gráfico">PORTAFOLIO</h1>
+      <span class="badge blue" aria-label="Año 2026">2026</span>
+    </div>
+    <div><span class="name-pill">Paula Andrea Sandoval</span></div>
+  </div>
+  <a class="hero-mail" href="mailto:paulasand67@gmail.com">
+    <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2" fill="#E84C3D"/><path d="M3 6.5l9 6.5 9-6.5" stroke="#F2D45C" stroke-width="1.8" fill="none"/></svg></span>
+    paulasand67@gmail.com
+  </a>
+  <a class="scroll-hint" href="#sobre-mi" aria-label="Desplázate hacia abajo"><span class="mouse"></span>scroll</a>
+</section>
+
+<!-- =====================================================
+     2. SOBRE MÍ
+     ===================================================== -->
+<section class="about" id="sobre-mi" data-tint="#F6EDC4" aria-labelledby="hola-title">
+  <div class="wrap about-grid">
+    <div class="rv">
+      <div class="sticker">
+        <div class="stripes arch" aria-hidden="true"></div>
+        <figure class="shot no-zoom" data-name="perfil.webp" style="--pale:var(--amarillo-palido)">
+          <img src="img/perfil.webp" width="1000" height="1184" alt="Fotografía de Paula Andrea Sandoval sonriendo, sentada con bufanda a cuadros" loading="lazy" decoding="async">
+        </figure>
+      </div>
+      <div class="loc">
+        <span class="pill outline"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Bogotá - Colombia</span>
+      </div>
+    </div>
+
+    <div>
+      <h2 class="ttl hola rv" id="hola-title">
+        <span class="display">¡HOLA!</span>
+        <span class="script">Soy Paula</span>
+      </h2>
+
+      <div class="pillbox azul bleed-r rv">
+        <p>Estudiante de Diseño Gráfico que encuentra en el diseño una forma de transformar ideas en propuestas visuales que comuniquen, conecten y tengan propósito. Me apasiona explorar diferentes lenguajes visuales, especialmente en el <strong>diseño editorial, la identidad de marca y las campañas visuales</strong>, equilibrando creatividad, concepto y funcionalidad. Mi forma de trabajar nace de <strong>la curiosidad, la pasión y el compromiso</strong> con cada proceso creativo. A través de la investigación, la conceptualización y la experimentación, busco desarrollar soluciones gráficas coherentes y significativas, adaptadas a diferentes medios y públicos, que reflejen una mirada propia y respondan de manera efectiva a las necesidades de cada proyecto.</p>
+      </div>
+
+      <div class="cols">
+        <div>
+          <div class="block rv">
+            <h3 class="h-sm">Estudios</h3>
+            <p class="h-sub">Estudiante de Diseño Gráfico</p>
+            <p>Sexto Semestre<br>Corporación Universitaria Taller 5</p>
+          </div>
+          <div class="block rv">
+            <h3 class="h-sm">Experiencia laboral</h3>
+            <p class="h-sub">Diseño y personalización de productos</p>
+            <p>Diseño y adaptación de imágenes e ilustraciones para estampado textil mediante DTF en sacos y camisetas, y personalización gráfica de vasos y termos mediante sublimación.</p>
+          </div>
+          <div class="block rv">
+            <h3 class="h-sm">Idiomas</h3>
+            <p><strong>Inglés</strong> – Avanzado</p>
+          </div>
+        </div>
+        <div>
+          <h3 class="h-sm rv">Manejo de software</h3>
+          <div class="skills" id="skills"><!-- generado por JS --></div>
+        </div>
+      </div>
+
+      <div class="areas">
+        <h3 class="h-sm rv">Áreas de enfoque</h3>
+        <ul class="pills stagger">
+          <li class="pill blue">Diseño Editorial</li>
+          <li class="pill blue">Identidad de marca</li>
+          <li class="pill blue">Campañas visuales/publicidad</li>
+          <li class="pill blue">Ilustración/Posters</li>
+        </ul>
+      </div>
+      <div class="areas">
+        <h3 class="h-sm rv">Habilidades blandas</h3>
+        <ul class="pills stagger">
+          <li class="pill outline">Creatividad</li>
+          <li class="pill outline">Adaptabilidad</li>
+          <li class="pill outline">Cumplimiento de metas</li>
+          <li class="pill outline">Responsabilidad y compromiso</li>
+          <li class="pill outline">Escucha activa</li>
+          <li class="pill outline">Liderazgo</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div class="marquee-track"></div></div>
+
+<!-- =====================================================
+     3. ÍNDICE — CONTENIDO
+     ===================================================== -->
+<section class="index" id="proyectos" data-tint="#DCE9F2" aria-labelledby="contenido-title">
+  <svg class="arcs" data-arcs="#DCE9F2" data-n="6" viewBox="0 0 1000 1000" aria-hidden="true"></svg>
+  <div class="wrap">
+    <h2 class="contenido rv" id="contenido-title">
+      <span class="display">CONTENIDO</span>
+      <span class="badge yellow">Mis Proyectos</span>
+    </h2>
+    <div class="filters" role="group" aria-label="Filtrar proyectos">
+      <button class="pill outline" data-filter="all" aria-pressed="true">Todos</button>
+      <button class="pill outline" data-filter="editorial" aria-pressed="false">Editorial</button>
+      <button class="pill outline" data-filter="campanas" aria-pressed="false">Campañas</button>
+      <button class="pill outline" data-filter="branding" aria-pressed="false">Branding</button>
+      <button class="pill outline" data-filter="3d" aria-pressed="false">3D</button>
+      <button class="pill outline" data-filter="ilustracion" aria-pressed="false">Ilustración</button>
+    </div>
+    <ul class="cards stagger" id="cards"><!-- generado por JS --></ul>
+  </div>
+</section>
+
+<!-- =====================================================
+     4. PROYECTOS — se generan desde el arreglo CATEGORIAS (JS)
+     ===================================================== -->
+<div id="categorias"></div>
+
+<div class="marquee" aria-hidden="true"><div class="marquee-track"></div></div>
+
+<!-- =====================================================
+     5. CONTACTO
+     ===================================================== -->
+<section class="contact" id="contacto" data-tint="#FBE9CF" aria-labelledby="contacto-title">
+  <div class="sun-par" style="position:absolute;inset:0;z-index:-1" data-parallax="0.1"><div class="sun" data-sun="#FBE9CF" data-cx="0.62" data-cy="0.56" data-seed="11"></div></div>
+  <div class="wrap contact-grid">
+    <div class="sticker rv">
+      <figure class="shot no-zoom cutout" data-name="perfil-contacto.webp" style="--pale:var(--durazno)">
+        <img src="img/perfil-contacto.webp" width="1000" height="1187" alt="Fotografía de Paula Andrea Sandoval sonriendo, sentada" loading="lazy" decoding="async">
+      </figure>
+    </div>
+    <div>
+      <h2 class="display contactame rv" id="contacto-title">Contáctame</h2>
+      <div class="pillbox azul rv from-r">
+        <ul class="c-list">
+          <li class="c-item">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            <a href="mailto:paulasand67@gmail.com">paulasand67@gmail.com</a>
+            <button class="copy" data-copy="paulasand67@gmail.com" aria-label="Copiar correo">copiar</button>
+          </li>
+          <li class="c-item">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="#E84C3D"/></svg>
+            <a href="https://www.instagram.com/pau.phic/" target="_blank" rel="noopener">@pau.phic</a>
+            <button class="copy" data-copy="@pau.phic" aria-label="Copiar usuario de Instagram">copiar</button>
+          </li>
+          <li class="c-item">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+            <a href="tel:+573134139713">3134139713</a>
+            <a class="wa" href="https://wa.me/573134139713" target="_blank" rel="noopener">WhatsApp</a>
+            <button class="copy" data-copy="3134139713" aria-label="Copiar teléfono">copiar</button>
+          </li>
+        </ul>
+      </div>
+      <a class="btn rv" href="portafolio.pdf" download>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 19h16"/></svg>
+        Descargar portafolio PDF
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- =====================================================
+     6. FOOTER
+     ===================================================== -->
+<footer class="footer">
+  <div class="wrap">
+    <span class="script">Paula Andrea Sandoval</span>
+    <p>© <span id="year">2026</span> · Hecho con <span class="heart" aria-label="amor">♥</span> en Bogotá</p>
+  </div>
+</footer>
+
+<!-- Lightbox -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Visor de imágenes" aria-hidden="true">
+  <div class="lb-stage" id="lb-stage"></div>
+  <button class="lb-close" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <button class="lb-prev" aria-label="Anterior"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <button class="lb-next" aria-label="Siguiente"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+  <span class="lb-count" aria-live="polite"></span>
+</div>
+<div class="toast" role="status" aria-live="polite">¡Copiado!</div>
+
+<script>
+/* =========================================================
+   A. DATOS — edita aquí habilidades y proyectos
+   ========================================================= */
+const SOFTWARE = [
+  { k:'ai',  name:'Illustrator', desc:'Identidad visual · Ilustración · Vectorización', v:85 },
+  { k:'ps',  name:'Photoshop',   desc:'Retoque · Manipulación de imagen · Ilustración', v:80 },
+  { k:'id',  name:'InDesign',    desc:'Diseño editorial · Diagramación · Maquetación', v:75 },
+  { k:'c4d', name:'Cinema 4D',   desc:'Modelado 3D · Materiales · Renderizado', v:50 },
+  { k:'lr',  name:'Lightroom',   desc:'Revelado · Color · Gestión fotográfica', v:50 },
+  { k:'fig', name:'Figma',       desc:'Diseño digital · Interfaces · Prototipado', v:50 },
+];
+
+/* Cada categoría: separador + lista de proyectos.
+   Colores: usa los nombres de las variables CSS (sin --).
+   Para agregar un proyecto, copia un objeto de "proyectos" y cambia sus datos. */
+const CATEGORIAS = [
+  {
+    id:'editorial', num:'01', indice:'Diseño Editorial', pale:'azul-palido', tint:'#DCE9F2',
+    titulo:'DISEÑO', tituloColor:'ciruela-suave', script:'Editorial', scriptColor:'amarillo',
+    proyectos:[
+      {
+        titulo:'REVISTA', tituloColor:'amarillo', script:'Creations', scriptColor:'ciruela',
+        desc:'Creations es un proyecto editorial enfocado en explorar el mundo del diseño de interiores a través de sus diferentes estilos, conceptos y posibilidades creativas. La revista busca presentar de manera clara y visual los elementos que intervienen en la construcción de espacios, abordando temas como la teoría del color, las tendencias decorativas, los estilos de ambientación, entre otros.',
+        desc2:'Desde el diseño editorial, la propuesta busca equilibrar la información y los recursos gráficos mediante una composición dinámica que integra fotografías, paletas cromáticas, elementos tipográficos y bloques de texto. Se desarrolla una jerarquía visual que facilita la lectura y permite diferenciar los contenidos, jugando con la disposición de los elementos, las escalas tipográficas y las composiciones asimétricas.',
+        software:['id'], tags:['Editorial','Dinámico','Minimalista'],
+        imagenes:['creations-portada.webp','creations-int-1.webp','creations-int-2.webp'], galeria:'ancha'
+      },
+      {
+        titulo:'LIBRO TAPA DURA', tituloColor:'terracota', script:'Vincent Van Gogh', scriptColor:'ciruela', sx:'14%', sy:'84%',
+        desc:'A través del pincel de Van Gogh es un proyecto editorial de tapa dura que recorre la vida, trayectoria artística y legado de Vincent van Gogh. A través de una biografía ilustrada, el libro propone un acercamiento a su historia personal y a las experiencias que marcaron su evolución como artista, y sus creaciones más emblemáticas.',
+        desc2:'Desde el diseño editorial, el proyecto busca convertir la lectura en una experiencia visual y cultural, integrando reproducciones de sus pinturas, textos biográficos y contenidos complementarios que enriquecen la comprensión de su obra. La propuesta contempla la organización de información e imágenes como elementos que se complementan, dando protagonismo tanto al contenido escrito como a las obras del artista.',
+        software:['ai','ps','id'], tags:['Editorial','Artístico','Expresivo'],
+        imagenes:['vangogh-tapa.webp','vangogh-int-1.webp','vangogh-int-2.webp','vangogh-int-3.webp','vangogh-int-4.webp'], galeria:'ancha'
+      }
+    ]
+  },
+  {
+    id:'campanas', num:'02', indice:'Campañas/ Publicidad', pale:'amarillo-palido', tint:'#F6EDC4',
+    titulo:'CAMPAÑAS', tituloColor:'terracota', script:'Visuales', scriptColor:'azul',
+    proyectos:[
+      {
+        titulo:'MENTE OFF', tituloColor:'coral', script:'Campaña', scriptColor:'amarillo', scriptFirst:true, heroLogo:true,
+        desc:'Mente OFF es una campaña de comunicación social enfocada en visibilizar y abordar las problemáticas relacionadas con la salud mental de los jóvenes universitarios entre los 18 y 25 años en Bogotá. La propuesta surge como respuesta a las diferentes situaciones que atraviesan durante esta etapa de transición, como la presión académica, la incertidumbre frente al futuro, las preocupaciones económicas y el uso desmedido de las redes sociales, factores que pueden afectar su bienestar emocional y calidad de vida.',
+        desc2:'Desde el desarrollo gráfico y publicitario, se construye un sistema de comunicación que integra carteles, mupis, vallas publicitarias, flyers y contenido para redes sociales. Las piezas mantienen una línea visual coherente mediante el uso de recursos tipográficos, contrastes cromáticos y mensajes directos que permiten adaptar la campaña a diferentes espacios y puntos de contacto con el público.',
+        software:['ai','ps'], tags:['Reflexivo','Propositivo','Cercano'],
+        imagenes:['menteoff-logo.webp','menteoff-valla.webp','menteoff-mupi-1.webp','menteoff-mupi-2.webp'], galeria:'destacada',
+        /* Imagen panorámica a todo el ancho, debajo de la galería */
+        banner:{ img:'menteoff-instagram.webp', alt:'Carrusel de publicaciones de Instagram de Mente OFF dentro de un celular', caption:'Post para Instagram — #SueltaVuelvealoSimple' }
+      },
+      {
+        titulo:'USACHÉVERE', tituloColor:'coral', script:'Campaña', scriptColor:'amarillo', scriptFirst:true, heroLogo:true,
+        desc:'Usaquén es un proyecto de diseño de información que busca visibilizar la riqueza histórica, cultural y turística de esta localidad de Bogotá desde una perspectiva diferente y atractiva para el público joven. La propuesta surge del interés por reconocer sus espacios, tradiciones, oferta gastronómica, zonas verdes y lugares de interés, destacando su potencial como destino para descubrir y recorrer.',
+        desc2:'La propuesta se materializa mediante un sistema gráfico de piezas informativas que incluye un fanzine, publicaciones para redes sociales, una infografía interactiva, carteles y una pieza de colección. Cada formato cumple una función comunicativa particular, permitiendo presentar y distribuir la información a través de diferentes medios y puntos de contacto.',
+        software:['ai','ps'], tags:['Exploratorio','Informativo','Dinámico'],
+        imagenes:['usachevere-logo.webp','usachevere-cartel.webp','usachevere-fanzine-1.webp','usachevere-fanzine-2.webp','usachevere-infografia.webp','usachevere-coleccion.webp'], galeria:'destacada'
+      }
+    ]
+  },
+  {
+    id:'branding', num:'03', indice:'Branding', pale:'rosa-palido', tint:'#F2E0D8',
+    titulo:'BRANDING', tituloColor:'ciruela-suave', script:'', scriptColor:'',
+    proyectos:[
+      {
+        titulo:'CAFÉ', tituloColor:'ciruela-suave', script:'Aurora', scriptColor:'amarillo', sx:'45%', sy:'40%',
+        desc:'Café Aurora es un proyecto de construcción de marca para un establecimiento de café artesanal colombiano que busca integrar la cultura cafetera, el arte y las experiencias de encuentro en un mismo espacio. La identidad de la marca se construye alrededor del concepto de los nuevos comienzos, representado por el significado de la palabra Aurora: el amanecer, la aparición de la luz y la oportunidad de iniciar una nueva etapa. Bajo esta idea, Café Aurora se proyecta como un espacio para detenerse, reconectar, compartir y encontrar inspiración, ofreciendo una experiencia que va más allá del consumo de café.',
+        desc2:'A partir de su propuesta de valor, se desarrolla un universo visual que busca transmitir calidez, personalidad y conexión con el arte. La construcción de la identidad contempla el desarrollo de elementos gráficos, selección tipográfica y una paleta cromática que permite establecer un lenguaje visual reconocible y coherente con la esencia del establecimiento.',
+        software:['ai','ps'], tags:['Experiencial','Conceptual','Cálido'],
+        imagenes:['aurora-mockup.webp','aurora-pub-1.webp','aurora-packaging.webp','aurora-pub-2.webp','aurora-vasos.webp'], galeria:'destacada'
+      },
+      {
+        titulo:'MORATTO', tituloColor:'ciruela-suave', script:'Bebida energética', scriptColor:'oxido', sx:'18%', sy:'58%',
+        desc:'Moratto es una propuesta de marca para una bebida energética cuya identidad nace de la mora, tomando como punto de partida su pigmentación, intensidad y fuerza visual para construir un universo gráfico reconocible. A partir de este ingrediente se desarrolla una estética que conecta el producto con una personalidad enérgica, destacando el color y la expresión visual como elementos centrales de su identidad.',
+        desc2:'El proyecto integra el diseño de empaque y el desarrollo de piezas publicitarias, como pósteres y afiches para medios exteriores, manteniendo una línea visual coherente entre la identidad del producto y su comunicación. De esta manera, Moratto convierte un juego conceptual en una estrategia gráfica que busca generar recordación, despertar interés y presentar la bebida desde una personalidad visual propia.',
+        software:['ai','ps'], tags:['Cromático','Urbano','Creativo'],
+        imagenes:['moratto-lata.webp','moratto-afiche-1.webp','moratto-afiche-2.webp','moratto-afiche-3.webp','moratto-afiche-4.webp'], galeria:'destacada'
+      }
+    ]
+  },
+  {
+    id:'3d', num:'04', indice:'Modelado 3D', pale:'azul-palido', tint:'#DCE9F2',
+    titulo:'MODELADO 3D', tituloColor:'terracota', script:'', scriptColor:'',
+    proyectos:[
+      {
+        titulo:'MODELADO', tituloColor:'terracota', script:'Habitación', scriptColor:'amarillo',
+        desc:'Este proyecto consiste en el diseño tridimensional de una habitación “ideal”. La propuesta combina materiales, texturas y tonalidades cálidas con acentos azules, mobiliario de formas orgánicas y elementos decorativos que aportan personalidad al ambiente. Mediante el modelado y la visualización 3D, se exploran las proporciones, la distribución del mobiliario, la iluminación y las relaciones espaciales, permitiendo comprender el proyecto desde diferentes perspectivas.',
+        software:['c4d'], tags:[],
+        imagenes:['habitacion-iso.webp','habitacion-render-1.webp','habitacion-render-2.webp','habitacion-render-3.webp'], galeria:'destacada'
+      }
+    ]
+  },
+  {
+    id:'ilustracion', num:'05', indice:'Ilustraciones /Poster', pale:'durazno', tint:'#FBE9CF',
+    titulo:'ILUSTRACIÓN', tituloColor:'ciruela-suave', script:'Digital', scriptColor:'rojo-coral',
+    proyectos:[
+      {
+        titulo:'ILUSTRACIÓN', tituloColor:'ciruela-suave', script:'Art Line', scriptColor:'rojo-coral', sx:'40%', sy:'48%',
+        desc:'Trabajo de ilustración, usando como referente al artista <strong>Patrick Brown</strong>. Se realizó un Spider-Man con la técnica de artline en Photoshop, con diferentes texturas, pinceles y efectos para un buen resultado final.',
+        software:['ps'], tags:[], imagenes:['artline.webp','artline-proceso-1.webp','artline-proceso-2.webp','artline-proceso-3.webp'], heroArch:true, galeria:'proceso',
+        leyendas:['1 · Boceto de estructura','2 · Boceto de detalle','3 · Entintado']
+      },
+      {
+        titulo:'ILUSTRACIÓN', tituloColor:'ciruela-suave', script:'Vectorial', scriptColor:'rojo-coral', sx:'40%', sy:'48%',
+        desc:'Trabajo de ilustración al estilo <strong>Chibi</strong>. Se realizó una ilustración de Deadpool, en donde se pudo experimentar con diferentes texturas, luces y degradados en Illustrator para un mejor resultado final.',
+        software:['ai'], tags:[], imagenes:['vectorial.webp','vectorial-proceso-1.webp','vectorial-proceso-2.webp','vectorial-proceso-3.webp'], galeria:'proceso',
+        leyendas:['1 · Boceto de estructura','2 · Boceto de detalle','3 · Vectorizado y color']
+      }
+    ]
+  }
+];
+
+/* =========================================================
+   B. UTILIDADES
+   ========================================================= */
+const $ = (s, c=document) => c.querySelector(s);
+const $$ = (s, c=document) => [...c.querySelectorAll(s)];
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const finePointer = matchMedia('(hover: hover) and (pointer: fine)').matches;
+const esc = s => String(s).replace(/[&<>"]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+
+const FIGMA_SVG = '<svg viewBox="0 0 38 57" aria-hidden="true"><path fill="#1ABCFE" d="M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0z"/><path fill="#0ACF83" d="M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 1 1-19 0z"/><path fill="#FF7262" d="M19 0v19h9.5a9.5 9.5 0 1 0 0-19H19z"/><path fill="#F24E1E" d="M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5z"/><path fill="#A259FF" d="M0 28.5A9.5 9.5 0 0 0 9.5 38H19V19H9.5A9.5 9.5 0 0 0 0 28.5z"/></svg>';
+const SW_LABEL = { ai:'Ai', ps:'Ps', id:'Id', c4d:'C4D', lr:'Lr', fig:FIGMA_SVG };
+const SW_NAME  = { ai:'Illustrator', ps:'Photoshop', id:'InDesign', c4d:'Cinema 4D', lr:'Lightroom', fig:'Figma' };
+const swIcon = k => `<span class="sw sw-${k}" title="${SW_NAME[k]}" role="img" aria-label="${SW_NAME[k]}">${SW_LABEL[k]}</span>`;
+
+/* Figura con imagen (si no existe, muestra placeholder con el nombre del archivo) */
+const shot = (file, alt, group, cls='') =>
+  `<figure class="shot ${cls}" data-name="${esc(file)}" data-group="${group}" tabindex="0" role="button" aria-label="Ampliar: ${esc(alt)}">
+     <img src="img/${esc(file)}" alt="${esc(alt)}" loading="lazy" decoding="async">
+   </figure>`;
+
+/* Título MAYÚSCULAS + script superpuesto */
+const title = (tag, t, tc, s, sc, opts={}) => {
+  const pos = (opts.sx ? `--sx:${opts.sx};` : '') + (opts.sy ? `--sy:${opts.sy};` : '');
+  return `<${tag} class="ttl rv ${opts.scriptFirst ? 'script-first' : ''} ${opts.cls||''}" style="${pos}">
+    <span class="display c-${tc}">${esc(t)}</span>${s ? `<span class="script c-${sc}">${esc(s)}</span>` : ''}
+  </${tag}>`;
+};
+
+/* =========================================================
+   C. RENDER: habilidades, índice, categorías y proyectos
+   ========================================================= */
+$('#skills').innerHTML = SOFTWARE.map(s => `
+  <div class="skill">
+    ${swIcon(s.k)}
+    <div>
+      <b>${s.name}<em data-count="${s.v}">0%</em></b>
+      <small>${s.desc}</small>
+      <div class="bar" role="progressbar" aria-label="Nivel en ${s.name}" aria-valuenow="${s.v}" aria-valuemin="0" aria-valuemax="100"><i style="--v:${s.v/100}"></i></div>
+    </div>
+  </div>`).join('');
+
+$('#cards').innerHTML = CATEGORIAS.map((c,i) => `
+  <li style="--i:${i}"><a class="card" href="#cat-${c.id}" data-cat="${c.id}">
+    <span class="n">${c.num}</span><span class="t">${c.indice.replace(/ /g,'<br>').replace('Diseño<br>Editorial','Diseño<br>Editorial')}</span>
+  </a></li>`).join('');
+
+let pIndex = 0;
+$('#categorias').innerHTML = CATEGORIAS.map((c, ci) => {
+  const sep = `
+  <section class="sep" id="cat-${c.id}" data-cat="${c.id}" data-tint="${c.tint}" aria-label="${esc(c.titulo + ' ' + c.script)}">
+    <div class="sun-par" style="position:absolute;inset:0;z-index:-1" data-parallax="0.12">
+      <div class="sun" data-sun="${getComputedStyle(document.documentElement).getPropertyValue('--'+c.pale).trim()}" data-cx="${[0.36,0.6,0.3,0.66,0.45][ci%5]}" data-cy="${[0.3,0.62,0.4,0.35,0.6][ci%5]}" data-seed="${ci*7+5}"></div>
+    </div>
+    <div class="wrap">
+      <span class="num rv">${c.num}</span>
+      ${title('h2', c.titulo, c.tituloColor, c.script, c.scriptColor)}
+    </div>
+  </section>`;
+
+  const projects = c.proyectos.map(p => {
+    const rev = pIndex % 2 === 1; const pid = 'p' + (pIndex++);
+    const [hero, ...rest] = p.imagenes;
+    const name = (p.titulo + ' ' + p.script).trim();
+    const hasBottom = p.desc2 || rest.length || (p.instagram && p.instagram.length);
+    return `
+    <article class="project ${rev ? 'rev' : ''}" id="${pid}" data-cat="${c.id}" style="--pale:var(--${c.pale})" aria-label="${esc(name)}">
+      <svg class="arcs ${rev ? 'right' : 'left'}" data-arcs="var(--${c.pale})" data-n="3" viewBox="0 0 1000 1000" aria-hidden="true"></svg>
+      <div class="wrap">
+        <div class="p-top">
+          ${title('h3', p.titulo, p.tituloColor, p.script, p.scriptColor, { scriptFirst:p.scriptFirst, sx:p.sx, sy:p.sy })}
+          <div class="p-desc"><div class="pillbox ${ci%2 ? 'azul' : ''} ${rev ? 'bleed-r from-r' : 'bleed-r from-r'} rv"><p>${p.desc}</p></div></div>
+          <div class="p-meta">
+            <div class="software-line rv">${p.software.map(swIcon).join('')}<span class="caption">Software en el que se desarrolló</span></div>
+            ${!p.desc2 && p.tags.length ? `<ul class="pills stagger">${p.tags.map((t,i)=>`<li class="pill" style="--i:${i}">${esc(t)}</li>`).join('')}</ul>` : ''}
+          </div>
+          <div class="p-media ${p.heroLogo ? 'is-logo' : ''} ${p.heroArch ? 'is-arch' : ''}">
+            <div class="win arch" aria-hidden="true"></div>
+            <div class="par" data-parallax="0.07" style="width:100%;display:grid;place-items:center">
+              <div class="tilt">${shot(hero, 'Mockup principal de ' + name, pid)}</div>
+            </div>
+          </div>
+        </div>
+        ${hasBottom ? `
+        <div class="p-bottom ${!p.desc2 && !p.instagram ? 'solo' : ''}">
+          <div class="p-txt">
+            ${p.desc2 ? `<div class="pillbox ${rev ? 'bleed-r from-r' : 'bleed-l'} rv"><p>${p.desc2}</p></div>` : ''}
+            ${p.desc2 && p.tags.length ? `<ul class="pills stagger">${p.tags.map((t,i)=>`<li class="pill" style="--i:${i}">${esc(t)}</li>`).join('')}</ul>` : ''}
+            ${p.instagram ? `
+            <div class="phone-wrap rv">
+              <p class="caption" style="text-align:center;margin:0">Post para Instagram — desliza →</p>
+              <div class="phone"><div class="screen">
+                <div class="ig-head"><i></i>${esc(p.instagramUser||'')}</div>
+                <div class="feed" tabindex="0" aria-label="Carrusel de publicaciones de Instagram">${p.instagram.map((f,i)=>shot(f, `Publicación de Instagram ${i+1} de ${name}`, pid)).join('')}</div>
+                <div class="dots">${p.instagram.map((_,i)=>`<b class="${i?'':'on'}"></b>`).join('')}</div>
+              </div></div>
+            </div>` : ''}
+          </div>
+          ${rest.length ? `<div class="gallery ${p.galeria || (rest.length > 4 ? 'many' : '')}">${rest.map((f,i)=> p.leyendas ? `<div class="paso rv">${shot(f, `${name}: ${p.leyendas[i]}`, pid)}<p class="caption">${esc(p.leyendas[i])}</p></div>` : shot(f, `${name}: pieza ${i+2}`, pid, 'rv')).join('')}</div>` : ''}
+        </div>` : ''}
+        ${p.banner ? `
+        <div class="banner rv">
+          <div class="scroller">${shot(p.banner.img, p.banner.alt, pid)}</div>
+          <p class="caption">${esc(p.banner.caption)}</p>
+        </div>` : ''}
+      </div>
+    </article>`;
+  }).join('');
+
+  return `<div class="cat" data-cat="${c.id}">${sep}${projects}</div>`;
+}).join('');
+
+/* Marquesinas */
+const mq = 'Editorial<i>✦</i>Branding<i>✦</i>Campañas<i>✦</i>3D<i>✦</i>Ilustración<i>✦</i>';
+$$('.marquee-track').forEach(t => t.innerHTML = `<span>${mq.repeat(3)}</span><span>${mq.repeat(3)}</span>`);
+
+/* Hero: dividir PORTAFOLIO en letras con máscara */
+(() => {
+  const h = $('.hero-title h1');
+  h.innerHTML = [...h.textContent].map((ch,i) => `<span class="ch" aria-hidden="true"><span style="--i:${i}">${ch}</span></span>`).join('');
+})();
+
+$('#year').textContent = new Date().getFullYear();
+
+/* =========================================================
+   D. GRÁFICOS SVG: rayos de sol y arcos concéntricos
+   ========================================================= */
+function rng(seed){ let s = seed * 9301 + 49297; return () => (s = (s * 9301 + 49297) % 233280) / 233280; }
+
+$$('.sun').forEach(el => {
+  const W = 1600, H = 1000;
+  const cx = +el.dataset.cx * W, cy = +el.dataset.cy * H, r = rng(+el.dataset.seed || 1);
+  const n = 18, step = 360 / n; let polys = '';
+  for (let i = 0; i < n; i++){
+    const a = (i * step + (r() - .5) * 6) * Math.PI / 180;
+    const w = (step * (0.3 + r() * 0.14)) * Math.PI / 180 / 2;
+    const r1 = 150 + r() * 260, r2 = 2200;
+    const p = [[r1, a - w*0.8], [r2, a - w], [r2, a + w], [r1, a + w*0.8]]
+      .map(([rad, ang]) => `${(cx + rad * Math.cos(ang)).toFixed(1)},${(cy + rad * Math.sin(ang)).toFixed(1)}`).join(' ');
+    polys += `<polygon points="${p}"/>`;
+  }
+  el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g class="rays" fill="${el.dataset.sun}" style="transform-origin:${cx}px ${cy}px">${polys}</g></svg>`;
+});
+
+$$('svg.arcs').forEach(svg => {
+  const n = +svg.dataset.n || 3, col = svg.dataset.arcs; let out = '';
+  for (let i = 0; i < n; i++){
+    const rad = 120 + i * (380 / Math.max(1, n - 1));
+    out += `<circle cx="500" cy="500" r="${rad}" pathLength="1" stroke="${col}" stroke-width="${n > 3 ? 26 : 40}" style="stroke:${col}"/>`;
+  }
+  svg.innerHTML = out;
+});
+
+/* =========================================================
+   E. PLACEHOLDERS de imágenes faltantes
+   ========================================================= */
+function markPh(img){ const f = img.closest('.shot'); if (f) f.classList.add('is-ph'); }
+$$('.shot img').forEach(img => {
+  img.addEventListener('error', () => markPh(img), { once:true });
+  if (img.complete && img.naturalWidth === 0) markPh(img);
+});
+
+/* =========================================================
+   F. REVEAL ON SCROLL (IntersectionObserver)
+   ========================================================= */
+$$('.stagger').forEach(list => [...list.children].forEach((li,i) => li.style.setProperty('--i', i)));
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.classList.add('in');
+    if (e.target.id === 'skills') countUp(e.target);
+    io.unobserve(e.target);
+  });
+}, { rootMargin:'0px 0px -10% 0px', threshold:.12 });
+$$('.rv:not(.pillbox), .stagger, .arcs, #skills').forEach(el => io.observe(el));
+/* Las cajas píldora empiezan recortadas (clip-path) y no "intersectan":
+   se observa su contenedor y se revelan desde ahí */
+const pio = new IntersectionObserver(entries => entries.forEach(e => {
+  if (!e.isIntersecting) return;
+  $$(':scope > .pillbox.rv', e.target).forEach(x => x.classList.add('in')); pio.unobserve(e.target);
+}), { rootMargin:'0px 0px -12% 0px' });
+new Set($$('.pillbox.rv').map(pb => pb.parentElement)).forEach(el => pio.observe(el));
+
+function countUp(root){
+  $$('[data-count]', root).forEach(el => {
+    const to = +el.dataset.count, dur = reduce ? 1 : 1400, t0 = performance.now();
+    const tick = now => {
+      const k = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - k, 4);
+      el.textContent = Math.round(to * e) + '%';
+      if (k < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  });
+}
+
+/* Tinte de fondo según la sección visible */
+const tintIO = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) document.documentElement.style.setProperty('--tint', e.target.dataset.tint); });
+}, { rootMargin:'-45% 0px -45% 0px' });
+$$('[data-tint]').forEach(s => tintIO.observe(s));
+/* Los proyectos heredan el tinte de su categoría */
+$$('.project').forEach(p => { const c = CATEGORIAS.find(c => c.id === p.dataset.cat); p.dataset.tint = c.tint; tintIO.observe(p); });
+
+/* =========================================================
+   G. SCROLL: progreso, nav auto-ocultable y parallax
+   ========================================================= */
+const nav = $('#nav'), bar = $('.progress');
+const parEls = reduce ? [] : $$('[data-parallax]');
+let lastY = scrollY, ticking = false;
+function onScroll(){
+  const y = scrollY, max = document.documentElement.scrollHeight - innerHeight;
+  bar.style.transform = `scaleX(${max > 0 ? y / max : 0})`;
+  if (!document.body.classList.contains('menu-open')) nav.classList.toggle('hide', y > lastY && y > 120);
+  lastY = y;
+  const vh = innerHeight;
+  parEls.forEach(el => {
+    const r = el.parentElement.getBoundingClientRect();
+    if (r.bottom < -200 || r.top > vh + 200) return;
+    const d = (r.top + r.height / 2 - vh / 2) * -(+el.dataset.parallax);
+    el.style.transform = `translate3d(0, ${d.toFixed(1)}px, 0)`;
+  });
+  ticking = false;
+}
+addEventListener('scroll', () => { if (!ticking){ ticking = true; requestAnimationFrame(onScroll); } }, { passive:true });
+addEventListener('resize', onScroll);
+onScroll();
+
+/* =========================================================
+   H. MENÚ MÓVIL
+   ========================================================= */
+const burger = $('.burger'), panel = $('#mobile-panel');
+function setMenu(open){
+  document.body.classList.toggle('menu-open', open);
+  burger.setAttribute('aria-expanded', open); burger.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+  panel.setAttribute('aria-hidden', !open);
+  document.body.style.overflow = open ? 'hidden' : '';
+  if (open) nav.classList.remove('hide');
+}
+burger.addEventListener('click', () => setMenu(!document.body.classList.contains('menu-open')));
+$$('a', panel).forEach(a => a.addEventListener('click', () => setMenu(false)));
+addEventListener('keydown', e => { if (e.key === 'Escape' && document.body.classList.contains('menu-open')) setMenu(false); });
+
+/* =========================================================
+   I. FILTROS DEL ÍNDICE
+   ========================================================= */
+$$('.filters button').forEach(btn => btn.addEventListener('click', () => {
+  const f = btn.dataset.filter;
+  $$('.filters button').forEach(b => b.setAttribute('aria-pressed', b === btn));
+  $$('.card').forEach(c => { c.classList.toggle('is-dim', f !== 'all' && c.dataset.cat !== f); c.classList.toggle('is-match', f !== 'all' && c.dataset.cat === f); });
+  $$('.cat').forEach(c => c.classList.toggle('is-dim', f !== 'all' && c.dataset.cat !== f));
+}));
+
+/* =========================================================
+   J. MOCKUPS: inclinación 3D al pasar el cursor
+   ========================================================= */
+if (!reduce && finePointer){
+  $$('.tilt').forEach(t => {
+    t.addEventListener('pointermove', e => {
+      const r = t.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+      t.style.transform = `perspective(900px) rotateY(${(x * 12).toFixed(2)}deg) rotateX(${(-y * 12).toFixed(2)}deg)`;
+    });
+    t.addEventListener('pointerleave', () => t.style.transform = '');
+  });
+}
+
+/* Puntos del carrusel de Instagram */
+$$('.phone .feed').forEach(feed => {
+  const dots = $$('.dots b', feed.parentElement);
+  feed.addEventListener('scroll', () => {
+    const i = Math.round(feed.scrollLeft / feed.clientWidth);
+    dots.forEach((d,j) => d.classList.toggle('on', i === j));
+  }, { passive:true });
+});
+
+/* =========================================================
+   K. LIGHTBOX (flechas, teclado y swipe)
+   ========================================================= */
+const lb = $('#lb'), stage = $('#lb-stage'), count = $('.lb-count');
+let group = [], idx = 0, lastFocus = null;
+function showLb(){
+  const f = group[idx], file = f.dataset.name, alt = $('img', f).alt;
+  stage.innerHTML = '';
+  const img = new Image(); img.alt = alt;
+  img.onload = () => requestAnimationFrame(() => img.classList.add('ready'));
+  img.onerror = () => { stage.innerHTML = `<figure class="shot is-ph" data-name="${esc(file)}" style="--pale:${getComputedStyle(f).getPropertyValue('--pale')}"></figure>`; };
+  img.src = 'img/' + file; stage.appendChild(img);
+  count.textContent = `${idx + 1} / ${group.length}`;
+  $('.lb-prev').hidden = $('.lb-next').hidden = group.length < 2;
+}
+function openLb(fig){
+  group = $$(`.shot[data-group="${fig.dataset.group}"]`); idx = group.indexOf(fig);
+  lastFocus = document.activeElement; showLb();
+  lb.classList.add('open'); lb.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden';
+  $('.lb-close').focus();
+}
+function closeLb(){ lb.classList.remove('open'); lb.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; lastFocus && lastFocus.focus(); }
+const step = d => { idx = (idx + d + group.length) % group.length; showLb(); };
+document.addEventListener('click', e => { const f = e.target.closest('.shot[data-group]'); if (f && !lb.contains(f)) openLb(f); });
+document.addEventListener('keydown', e => {
+  if (lb.classList.contains('open')){
+    if (e.key === 'Escape') closeLb();
+    if (e.key === 'ArrowRight') step(1);
+    if (e.key === 'ArrowLeft') step(-1);
+    if (e.key === 'Tab'){ // trampa de foco
+      const btns = $$('button:not([hidden])', lb); const i = btns.indexOf(document.activeElement);
+      e.preventDefault(); btns[(i + (e.shiftKey ? -1 : 1) + btns.length) % btns.length].focus();
+    }
+  } else if ((e.key === 'Enter' || e.key === ' ') && e.target.matches('.shot[data-group]')){ e.preventDefault(); openLb(e.target); }
+});
+$('.lb-close').onclick = closeLb; $('.lb-prev').onclick = () => step(-1); $('.lb-next').onclick = () => step(1);
+lb.addEventListener('click', e => { if (e.target === lb || e.target === stage) closeLb(); });
+let tx = null;
+lb.addEventListener('touchstart', e => tx = e.touches[0].clientX, { passive:true });
+lb.addEventListener('touchend', e => { if (tx === null) return; const dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 50) step(dx < 0 ? 1 : -1); tx = null; });
+
+/* =========================================================
+   L. COPIAR AL PORTAPAPELES
+   ========================================================= */
+const toast = $('.toast'); let toastT;
+$$('.copy').forEach(b => b.addEventListener('click', async () => {
+  try { await navigator.clipboard.writeText(b.dataset.copy); }
+  catch { const t = document.createElement('textarea'); t.value = b.dataset.copy; document.body.appendChild(t); t.select(); document.execCommand('copy'); t.remove(); }
+  toast.classList.add('show'); clearTimeout(toastT); toastT = setTimeout(() => toast.classList.remove('show'), 1600);
+}));
+
+/* =========================================================
+   M. CURSOR PERSONALIZADO (solo escritorio)
+   ========================================================= */
+if (finePointer && !reduce){
+  const cur = $('.cursor'); let mx = -100, my = -100, cx = -100, cy = -100;
+  document.body.classList.add('has-cursor');
+  addEventListener('pointermove', e => { mx = e.clientX; my = e.clientY; cur.style.opacity = 1; });
+  document.addEventListener('pointerleave', () => cur.style.opacity = 0);
+  document.addEventListener('pointerover', e => {
+    cur.classList.toggle('view', !!e.target.closest('.shot[data-group]') && !lb.classList.contains('open'));
+    cur.classList.toggle('link', !e.target.closest('.shot[data-group]') && !!e.target.closest('a, button'));
+  });
+  (function loop(){ cx += (mx - cx) * .22; cy += (my - cy) * .22; cur.style.transform = `translate3d(${cx}px, ${cy}px, 0)`; requestAnimationFrame(loop); })();
+}
+
+/* =========================================================
+   N. CARGA INICIAL
+   ========================================================= */
+const start = () => document.documentElement.classList.add('loaded');
+Promise.race([document.fonts ? document.fonts.ready : Promise.resolve(), new Promise(r => setTimeout(r, 1200))]).then(() => requestAnimationFrame(start));
+</script>
+</body>
+</html>
